@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://shape_square.tres" type="Shape2D" id=1]
+[ext_resource path="res://GridSpace.gd" type="Script" id=2]
+
+[node name="GridSpace" type="Position2D" groups=[
+"grid_spaces",
+]]
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 24, 24 )
+shape = ExtResource( 1 )
