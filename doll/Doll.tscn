@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://shape_square.tres" type="Shape2D" id=1]
-[ext_resource path="res://Doll.gd" type="Script" id=2]
-[ext_resource path="res://dolls_green.tres" type="Texture" id=3]
+[ext_resource path="res://res/shape_square.tres" type="Shape2D" id=1]
+[ext_resource path="res://doll/Doll.gd" type="Script" id=2]
+[ext_resource path="res://res/dolls_green.tres" type="Texture" id=3]
 
 [node name="Doll" type="Area2D" groups=[
 "dolls",
