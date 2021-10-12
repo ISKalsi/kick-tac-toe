@@ -1,8 +1,8 @@
 extends RichTextLabel
 
-const PLAYER1_X = 64
-const PLAYER2_X = 400
-const FINISHED_X = 228
+const PLAYER1_X = 48
+const PLAYER2_X = 388
+const FINISHED_X = 200
 
 var x_coord = PLAYER1_X
 
