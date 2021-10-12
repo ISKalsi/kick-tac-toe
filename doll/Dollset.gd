@@ -5,7 +5,6 @@ export var is_first_turn: bool
 
 signal turn_over(did_win)
 signal game_tie
-signal game_over
 
 onready var dolls = get_children()
 
@@ -80,4 +79,3 @@ func reset():
 
 func _on_playAgain_pressed():
 	reset()
-	
