@@ -1,7 +1,9 @@
 extends Button
 
-func _ready():
-	visible = true
 
 func _on_playAgain_pressed():
-	print("play again")
+	visible = false
+
+
+func _on_game_finished():
+	visible = true

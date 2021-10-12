@@ -13,6 +13,9 @@ onready var grid_spaces = get_tree().get_nodes_in_group("grid_spaces")
 var player1_moves_finished = false
 var player2_moves_finished = false
 
+var player1_score = 0
+var player2_score = 0
+
 const win_scenarios = [
 	[0, 1, 2],
 	[3, 4, 5],

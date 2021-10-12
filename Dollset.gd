@@ -5,6 +5,7 @@ export var is_first_turn: bool
 
 signal turn_over(did_win)
 signal game_tie
+signal game_over
 
 onready var dolls = get_children()
 
@@ -64,3 +65,19 @@ func canMakeNextMove():
 			return true
 	
 	return false
+
+func reset():
+	turn_map.clear()
+	
+	var i = 1
+	for doll in dolls:
+		dolls_left[i] = true
+		doll.input_pickable = is_first_turn
+		doll.grid_space = null
+		doll.selected = false
+		doll.fitted = false
+		i += 1
+
+func _on_playAgain_pressed():
+	reset()
+	
