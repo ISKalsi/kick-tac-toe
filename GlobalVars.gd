@@ -26,3 +26,15 @@ const win_scenarios = [
 	[0, 4, 8],
 	[2, 4, 6],
 ]
+
+func reset_grid():
+	for i in range(grid.size()):
+		grid[i] = EMPTY
+	
+	for space in grid_spaces:
+		space.doll_weight = 0
+
+func reset():
+	player1_moves_finished = false
+	player2_moves_finished = false
+	reset_grid()

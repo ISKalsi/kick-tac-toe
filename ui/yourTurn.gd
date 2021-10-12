@@ -12,7 +12,7 @@ signal game_finished
 func _process(delta):
 	rect_global_position.x = lerp(rect_global_position.x, x_coord, 5 * delta)
 
-func _on_Dollset1_turn_over(did_win):
+func _on_Dollset1_turn_over(did_win, _box_index):
 	if did_win:
 		is_game_finished = true
 		x_coord = FINISHED_X
@@ -22,7 +22,7 @@ func _on_Dollset1_turn_over(did_win):
 	elif !is_game_finished:
 		x_coord = PLAYER2_X
 
-func _on_Dollset2_turn_over(did_win):
+func _on_Dollset2_turn_over(did_win, _box_index):
 	if did_win:
 		is_game_finished = true
 		x_coord = FINISHED_X

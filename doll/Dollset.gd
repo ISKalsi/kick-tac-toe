@@ -3,7 +3,7 @@ extends Node2D
 export var doll_texture: Texture
 export var is_first_turn: bool
 
-signal turn_over(did_win)
+signal turn_over(did_win, box_index)
 signal game_tie
 
 onready var dolls = get_children()
@@ -29,16 +29,17 @@ func _on_Doll_turn_played(box_index):
 	
 	turn_map[box_index] = true
 	dolls_left[GlobalVars.grid[box_index]] = false
-	emit_signal("turn_over", hasWon())
+	emit_signal("turn_over", hasWon(), box_index)
 
-func _on_Dollset_turn_over(did_win):
+func _on_Dollset_turn_over(did_win, box_index):
 	if !did_win and !GlobalVars.player1_moves_finished and !GlobalVars.player2_moves_finished:
+		turn_map.erase(box_index)
 		if !canMakeNextMove():
 			if is_first_turn:
 				GlobalVars.player1_moves_finished = true
 			else:
 				GlobalVars.player2_moves_finished = true
-			emit_signal("turn_over", false)
+			emit_signal("turn_over", false, -1)
 		else:
 			for doll in dolls:
 				doll.input_pickable = true
