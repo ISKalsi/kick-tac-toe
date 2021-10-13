@@ -23,7 +23,7 @@ shortcut = SubResource( 2 )
 margin_right = 512.0
 margin_bottom = 256.0
 mouse_filter = 2
-color = Color( 0.960784, 1, 0.294118, 1 )
+color = Color( 1, 0.776471, 0.25098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
