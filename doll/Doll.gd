@@ -10,6 +10,7 @@ onready var grid_space
 onready var home_position = self.global_position
 
 const GRID_SPACE_WIDTH = 48
+const OFFSET = Vector2(-GRID_SPACE_WIDTH / 2, -GRID_SPACE_WIDTH)
 
 export var texture: Texture
 export var frame: int
@@ -23,7 +24,7 @@ func setup_doll_texture(t, f):
 
 func _physics_process(delta):
 	if !fitted and selected:
-		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
+		global_position = lerp(global_position, get_global_mouse_position() + OFFSET, 25 * delta)
 	elif grid_space != null:
 		global_position = lerp(global_position, grid_space.global_position, 10 * delta)
 	else:
